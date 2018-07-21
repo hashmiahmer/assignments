@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+  <reporter-output>
+  </reporter-output>
+  <suite name="eBayTest" duration-ms="213357" started-at="2018-07-21T18:59:07Z" finished-at="2018-07-21T19:02:40Z">
+    <groups>
+    </groups>
+    <test name="eBayHappyPath" duration-ms="213357" started-at="2018-07-21T18:59:07Z" finished-at="2018-07-21T19:02:40Z">
+      <class name="com.eBay.TestScripts.TestScript">
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.eBay.TestScripts.TestScript@6536e911]" name="setUp" is-config="true" duration-ms="83415" started-at="2018-07-22T00:29:07Z" finished-at="2018-07-22T00:30:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[55e9b522]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[6.0.1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[eBay.apk]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="homePage_TestCase_001()[pri:0, instance:com.eBay.TestScripts.TestScript@6536e911]" name="homePage_TestCase_001" duration-ms="98699" started-at="2018-07-22T00:30:30Z" finished-at="2018-07-22T00:32:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- homePage_TestCase_001 -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.eBay.TestScripts.TestScript@6536e911]" name="tearDown" is-config="true" duration-ms="0" started-at="2018-07-22T00:32:09Z" finished-at="2018-07-22T00:32:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=homePage_TestCase_001 status=SUCCESS method=TestScript.homePage_TestCase_001()[pri:0, instance:com.eBay.TestScripts.TestScript@6536e911] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="searchResultPage_TestCase_002()[pri:0, instance:com.eBay.TestScripts.TestScript@6536e911]" name="searchResultPage_TestCase_002" duration-ms="14646" started-at="2018-07-22T00:32:09Z" finished-at="2018-07-22T00:32:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchResultPage_TestCase_002 -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.eBay.TestScripts.TestScript@6536e911]" name="tearDown" is-config="true" duration-ms="0" started-at="2018-07-22T00:32:23Z" finished-at="2018-07-22T00:32:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=searchResultPage_TestCase_002 status=SUCCESS method=TestScript.searchResultPage_TestCase_002()[pri:0, instance:com.eBay.TestScripts.TestScript@6536e911] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="productDetailsPage_TestCase_003()[pri:0, instance:com.eBay.TestScripts.TestScript@6536e911]" name="productDetailsPage_TestCase_003" duration-ms="10689" started-at="2018-07-22T00:32:23Z" finished-at="2018-07-22T00:32:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- productDetailsPage_TestCase_003 -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.eBay.TestScripts.TestScript@6536e911]" name="tearDown" is-config="true" duration-ms="0" started-at="2018-07-22T00:32:34Z" finished-at="2018-07-22T00:32:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=productDetailsPage_TestCase_003 status=SUCCESS method=TestScript.productDetailsPage_TestCase_003()[pri:0, instance:com.eBay.TestScripts.TestScript@6536e911] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="signInPage_TestCase_004()[pri:0, instance:com.eBay.TestScripts.TestScript@6536e911]" name="signInPage_TestCase_004" duration-ms="4162" started-at="2018-07-22T00:32:34Z" finished-at="2018-07-22T00:32:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signInPage_TestCase_004 -->
+        <test-method status="PASS" signature="aftertest()[pri:0, instance:com.eBay.TestScripts.TestScript@6536e911]" name="aftertest" is-config="true" duration-ms="1689" started-at="2018-07-22T00:32:38Z" finished-at="2018-07-22T00:32:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aftertest -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.eBay.TestScripts.TestScript@6536e911]" name="tearDown" is-config="true" duration-ms="0" started-at="2018-07-22T00:32:38Z" finished-at="2018-07-22T00:32:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=signInPage_TestCase_004 status=SUCCESS method=TestScript.signInPage_TestCase_004()[pri:0, instance:com.eBay.TestScripts.TestScript@6536e911] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.eBay.TestScripts.TestScript -->
+    </test> <!-- eBayHappyPath -->
+  </suite> <!-- eBayTest -->
+</testng-results>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [eBayTest]">
+  <test name="eBayHappyPath(failed)">
+    <parameter name="platformVersion" value="6.0.1"/>
+    <parameter name="appName_with_apk_extension" value="eBay.apk"/>
+    <parameter name="deviceUDID" value="55e9b522"/>
+    <classes>
+      <class name="com.eBay.TestScripts.TestScript">
+        <methods>
+          <include name="tearDown"/>
+          <include name="testCaseId_001"/>
+          <include name="setUp"/>
+          <include name="aftertest"/>
+        </methods>
+      </class> <!-- com.eBay.TestScripts.TestScript -->
+    </classes>
+  </test> <!-- eBayHappyPath(failed) -->
+</suite> <!-- Failed suite [eBayTest] -->
