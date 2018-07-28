@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="eBayTest">
-  <test name="eBayHappyPath">
+ 
+	<test name="eBayHappyPath">
   <parameter name="deviceUDID" value="55e9b522"/>
   <parameter name="platformVersion" value="6.0.1"/>
   <parameter name="appName_with_apk_extension" value="eBay.apk"/>

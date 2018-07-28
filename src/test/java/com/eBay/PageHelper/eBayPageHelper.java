@@ -6,6 +6,7 @@ import java.util.List;
 import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.Reporter;
 
 import com.eBay.locators.LocatorReader;
 import com.eBay.util.DriverHelper;
@@ -38,9 +39,10 @@ public class eBayPageHelper extends DriverHelper {
 			screenOrientation = getDriver().getOrientation();
 			System.out.println(screenOrientation);
 			ExecutionLog.Log("Screen orientation: "+screenOrientation);
+			Reporter.log("Screen orientation: "+screenOrientation);
 			
 		} catch (Exception e) {
-			captureScreenshot(Thread.currentThread().getStackTrace()[1].getMethodName()+".jpg");
+			//captureScreenshot(Thread.currentThread().getStackTrace()[1].getMethodName()+".jpg");
 			ExecutionLog.Log(Thread.currentThread().getStackTrace()[1].getMethodName()+" method failed to execute due to error: "+e.getMessage());
 		}
 		return screenOrientation;
@@ -51,9 +53,10 @@ public class eBayPageHelper extends DriverHelper {
 			if(getScreenOrientation().toString().equalsIgnoreCase("LANDSCAPE")){
 				getDriver().rotate(ScreenOrientation.PORTRAIT);
 				ExecutionLog.Log("Change orientation to Portrait view.");
+				Reporter.log("Change orientation to Portrait view.");
 			}
 		} catch (Exception e) {
-			captureScreenshot(Thread.currentThread().getStackTrace()[1].getMethodName()+".jpg");
+			//captureScreenshot(Thread.currentThread().getStackTrace()[1].getMethodName()+".jpg");
 			ExecutionLog.Log(Thread.currentThread().getStackTrace()[1].getMethodName()+" method failed to execute due to error: "+e.getMessage());
 		}
 	}
@@ -66,12 +69,13 @@ public class eBayPageHelper extends DriverHelper {
 			WaitForElementPresent(locator,30);
 			if (isElementDisplayed(locator)) {
 				ExecutionLog.Log("Successfully land on application home page..");
+				
 			} else {
 				ExecutionLog.Log("Something went wrong!!! Unable to land on application home page...");
 				Assert.assertFalse(true, "Something went wrong!!! Unable to land on application home page...");
 			}
 		} catch (Exception e) {
-			captureScreenshot(Thread.currentThread().getStackTrace()[1].getMethodName()+".jpg");
+			//captureScreenshot(Thread.currentThread().getStackTrace()[1].getMethodName()+".jpg");
 			ExecutionLog.Log(Thread.currentThread().getStackTrace()[1].getMethodName()+" method failed to execute due to error: "+e.getMessage());
 		}
 	}
@@ -84,6 +88,7 @@ public class eBayPageHelper extends DriverHelper {
 			if (isElementPresent(searchBox_beforeClicking_locator)) {
 				clickOn(searchBox_beforeClicking_locator);
 				ExecutionLog.Log("Clicked on search field.");
+				
 			} else {
 				ExecutionLog.Log("Search field is not displayed");
 				Assert.assertFalse(true, "Search field is not displayed");
@@ -92,12 +97,13 @@ public class eBayPageHelper extends DriverHelper {
 			if (isElementPresent(searchBox_afterClicking_locator)) {
 				sendKeys(searchBox_afterClicking_locator,searchKeyword);
 				ExecutionLog.Log(searchKeyword+" search keyword entered");
+				
 			} else {
 				ExecutionLog.Log("Unable to find search field after cklicking.");
 				Assert.assertFalse(true, "Unable to find search field after cklicking.");
 			}
 		} catch (Exception e) {
-			captureScreenshot(Thread.currentThread().getStackTrace()[1].getMethodName()+".jpg");
+			//captureScreenshot(Thread.currentThread().getStackTrace()[1].getMethodName()+".jpg");
 			ExecutionLog.Log(Thread.currentThread().getStackTrace()[1].getMethodName()+" method failed to execute due to error: "+e.getMessage());		}
 	}
 	
@@ -114,7 +120,7 @@ public class eBayPageHelper extends DriverHelper {
 					}
 				}
 			} catch (Exception e) {
-				captureScreenshot(Thread.currentThread().getStackTrace()[1].getMethodName()+".jpg");
+				//captureScreenshot(Thread.currentThread().getStackTrace()[1].getMethodName()+".jpg");
 				ExecutionLog.Log(Thread.currentThread().getStackTrace()[1].getMethodName()+" method failed to execute due to error: "+e.getMessage());
 			}
 		}
@@ -139,7 +145,7 @@ public class eBayPageHelper extends DriverHelper {
 					ExecutionLog.Log("Something went wrong!!! unable to reach search result page..");
 				}
 			} catch (Exception e) {
-				captureScreenshot(Thread.currentThread().getStackTrace()[1].getMethodName()+".jpg");
+				//captureScreenshot(Thread.currentThread().getStackTrace()[1].getMethodName()+".jpg");
 				ExecutionLog.Log(Thread.currentThread().getStackTrace()[1].getMethodName()+" method failed to execute due to error: "+e.getMessage());
 			}
 		}
@@ -162,7 +168,7 @@ public class eBayPageHelper extends DriverHelper {
 					
 				}
 			} catch (Exception e) {
-				captureScreenshot(Thread.currentThread().getStackTrace()[1].getMethodName()+".jpg");
+				//captureScreenshot(Thread.currentThread().getStackTrace()[1].getMethodName()+".jpg");
 				ExecutionLog.Log(Thread.currentThread().getStackTrace()[1].getMethodName()+" method failed to execute due to error: "+e.getMessage());
 			}
 		}
@@ -180,7 +186,7 @@ public class eBayPageHelper extends DriverHelper {
 					}
 				}
 			} catch (Exception e) {
-				captureScreenshot(Thread.currentThread().getStackTrace()[1].getMethodName()+".jpg");
+				//captureScreenshot(Thread.currentThread().getStackTrace()[1].getMethodName()+".jpg");
 				ExecutionLog.Log(Thread.currentThread().getStackTrace()[1].getMethodName()+" method failed to execute due to error: "+e.getMessage());
 			}
 		}
@@ -198,7 +204,7 @@ public class eBayPageHelper extends DriverHelper {
 					Assert.assertFalse(true, "Something went wrong!!! failed to reach PDP");
 				}
 			} catch (Exception e) {
-				captureScreenshot(Thread.currentThread().getStackTrace()[1].getMethodName()+".jpg");
+				//captureScreenshot(Thread.currentThread().getStackTrace()[1].getMethodName()+".jpg");
 				ExecutionLog.Log(Thread.currentThread().getStackTrace()[1].getMethodName()+" method failed to execute due to error: "+e.getMessage());
 			}
 		}
@@ -215,7 +221,7 @@ public class eBayPageHelper extends DriverHelper {
 				TouchAction touchAction = new TouchAction(getDriver());
 				touchAction.press(startx, starty).waitAction(Duration.ofSeconds(2)).moveTo(endx, endy).release().perform();
 			} catch (Exception e) {
-				captureScreenshot(Thread.currentThread().getStackTrace()[1].getMethodName()+".jpg");
+				//captureScreenshot(Thread.currentThread().getStackTrace()[1].getMethodName()+".jpg");
 				ExecutionLog.Log(Thread.currentThread().getStackTrace()[1].getMethodName()+" method failed to execute due to error: "+e.getMessage());
 			}
 		}
@@ -236,7 +242,7 @@ public class eBayPageHelper extends DriverHelper {
 
 				}
 			} catch (Exception e) {
-				captureScreenshot(Thread.currentThread().getStackTrace()[1].getMethodName()+".jpg");
+				//captureScreenshot(Thread.currentThread().getStackTrace()[1].getMethodName()+".jpg");
 				ExecutionLog.Log(Thread.currentThread().getStackTrace()[1].getMethodName()+" method failed to execute due to error: "+e.getMessage());
 			}
 		}
@@ -251,7 +257,7 @@ public class eBayPageHelper extends DriverHelper {
 					Assert.assertFalse(true, "Element not found.");
 				}
 			} catch (Exception e) {
-				captureScreenshot(Thread.currentThread().getStackTrace()[1].getMethodName()+".jpg");
+				//captureScreenshot(Thread.currentThread().getStackTrace()[1].getMethodName()+".jpg");
 				ExecutionLog.Log(Thread.currentThread().getStackTrace()[1].getMethodName()+" method failed to execute due to error: "+e.getMessage());
 			}
 		}
@@ -276,7 +282,7 @@ public class eBayPageHelper extends DriverHelper {
 				}
 				Thread.sleep(500);
 			} catch (InterruptedException e) {
-				captureScreenshot(Thread.currentThread().getStackTrace()[1].getMethodName()+".jpg");
+				//captureScreenshot(Thread.currentThread().getStackTrace()[1].getMethodName()+".jpg");
 				ExecutionLog.Log(Thread.currentThread().getStackTrace()[1].getMethodName()+" method failed to execute due to error: "+e.getMessage());
 			}
 		}
@@ -286,7 +292,7 @@ public class eBayPageHelper extends DriverHelper {
 				getDriver().pressKeyCode(AndroidKeyCode.BACK);
 				WaitForElementPresent(eBayLocators.getLocator("ProductDetailPage.variationLayout"),30);
 			} catch (Exception e) {
-				captureScreenshot(Thread.currentThread().getStackTrace()[1].getMethodName()+".jpg");
+				//captureScreenshot(Thread.currentThread().getStackTrace()[1].getMethodName()+".jpg");
 				ExecutionLog.Log(Thread.currentThread().getStackTrace()[1].getMethodName()+" method failed to execute due to error: "+e.getMessage());
 		
 			}

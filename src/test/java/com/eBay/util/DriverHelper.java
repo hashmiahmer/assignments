@@ -1,6 +1,10 @@
 package com.eBay.util;
 
 import java.io.File;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -10,6 +14,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.Reporter;
+
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import io.appium.java_client.android.AndroidDriver;
@@ -175,21 +181,7 @@ public abstract class DriverHelper {
 		el.sendKeys(userName);
 	}
 	
-	public void captureScreenshot(String screenshotName) {
-
-		try {
-			TakesScreenshot ts = (TakesScreenshot) getDriver();
-
-			File source = ts.getScreenshotAs(OutputType.FILE);
-
-			FileUtils.copyFile(source, new File("./Screenshots/" + screenshotName + ".png"));
-
-			System.out.println("Screenshot taken");
-		} catch (Exception e) {
-
-			System.out.println("Exception while taking screenshot " + e.getMessage());
-		}
-	}
+	
 	
 	
 	

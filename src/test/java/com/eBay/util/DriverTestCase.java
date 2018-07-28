@@ -1,9 +1,12 @@
 package com.eBay.util;
 
 import java.io.File;
-
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -11,6 +14,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestResult;
+import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -25,7 +29,8 @@ import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 
-public abstract class DriverTestCase {
+public abstract class DriverTestCase{
+
 
 	public PropertyReader propertyReader;
 	public eBayPageHelper ebayPagehelper;
@@ -43,7 +48,8 @@ public abstract class DriverTestCase {
 		clearAllLogsAtExecutionLogfolder();
 		
 		//Clear all screenshots
-		clearAllScreenShots();
+		clearAllScreenShots("Screenshots");
+		clearAllScreenShots("attachedScreenshot");
 		
 		//Start appium server with set of capabilities
 		startServer(deviceUDID, platformVersion, appName_with_apk_extension);
@@ -52,21 +58,10 @@ public abstract class DriverTestCase {
 	}
 	
 	@AfterMethod
-	public void tearDown(ITestResult result) {
+	public void tearDown(ITestResult result) throws IOException {
 
 		if (ITestResult.FAILURE == result.getStatus()) {
-			try {
-				TakesScreenshot ts = (TakesScreenshot) driver;
-				File source = ts.getScreenshotAs(OutputType.FILE);
-				FileUtils.copyFile(source, new File(getPath()
-						+ "//Screenshots//" + result.getName() + ".png"));
-				System.out.println("Screenshot taken");
-			} catch (Exception e) {
-
-				System.out.println("Exception while taking screenshot "
-						+ e.getMessage());
-				e.printStackTrace();
-			}
+			attachedToReport(result.getName());
 		}
 		
 	}
@@ -132,11 +127,33 @@ public abstract class DriverTestCase {
 	}
 
 	// delete all the file under screenshots folder.
-	public void clearAllScreenShots() {
+	public void clearAllScreenShots(String folderName) {
 		String path = getPath();
-		File directory = new File(path + "//Screenshots");
+		File directory = new File(path + "//"+folderName);
 		for (File f : directory.listFiles())
 			f.delete();
+	}
+	
+	public String getScreenshot (String screenshotName) throws IOException{
+	    DateFormat dateformate = new SimpleDateFormat("dd-mm-yy-hh-mm-ss");
+	    Date date = new Date();
+	    String currentdate = dateformate.format(date);
+	    String imageName =screenshotName+currentdate;
+	    TakesScreenshot ts=(TakesScreenshot)getDriver();
+	    File source=ts.getScreenshotAs(OutputType.FILE);
+	    String location =System.getProperty("user.dir")+"\\attachedScreenshot\\"+imageName+".png";
+	    File screenshotLocation =new File (location);
+	    FileUtils.copyFile(source, screenshotLocation);
+	    return location;
+
+	}
+	
+	public void attachedToReport(String screenshotName) throws IOException{
+		String screenshotPath =getScreenshot(screenshotName);
+        System.out.println("Screenshot taken");
+        String path = "<img src=\"file://" + screenshotPath + "\" alt=\"\" width='300' height='500'/>";
+        System.out.println(screenshotPath+" and path - "+path);
+        Reporter.log(path);
 	}
 
 }
