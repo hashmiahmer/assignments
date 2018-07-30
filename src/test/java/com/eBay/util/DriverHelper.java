@@ -181,7 +181,27 @@ public abstract class DriverHelper {
 		el.sendKeys(userName);
 	}
 	
+	public String getScreenshot (String screenshotName) throws IOException{
+	    DateFormat dateformate = new SimpleDateFormat("dd-mm-yy-hh-mm-ss");
+	    Date date = new Date();
+	    String currentdate = dateformate.format(date);
+	    String imageName =screenshotName+currentdate;
+	    TakesScreenshot ts=(TakesScreenshot)getDriver();
+	    File source=ts.getScreenshotAs(OutputType.FILE);
+	    String location =System.getProperty("user.dir")+"\\attachedScreenshot\\"+imageName+".png";
+	    File screenshotLocation =new File (location);
+	    FileUtils.copyFile(source, screenshotLocation);
+	    return location;
+
+	}
 	
+	public void attachedToReport(String screenshotName) throws IOException{
+		String screenshotPath =getScreenshot(screenshotName);
+        System.out.println("Screenshot taken");
+        String path = "<img src=\"file://" + screenshotPath + "\" alt=\"\" width='300' height='500'/>";
+        System.out.println(screenshotPath+" and path - "+path);
+        Reporter.log(path);
+	}
 	
 	
 	

@@ -2,18 +2,15 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [eBayTest]">
   <test name="eBayHappyPath(failed)">
-    <parameter name="platformVersion" value="7.0"/>
+    <parameter name="platformVersion" value="6.0.1"/>
     <parameter name="appName_with_apk_extension" value="eBay.apk"/>
-    <parameter name="deviceUDID" value="473a8ae00204"/>
+    <parameter name="deviceUDID" value="55e9b522"/>
     <classes>
       <class name="com.eBay.TestScripts.TestScript">
         <methods>
           <include name="tearDown"/>
-          <include name="productDetailsPage_TestCase_003"/>
           <include name="signInPage_TestCase_004"/>
           <include name="setUp"/>
-          <include name="homePage_TestCase_001"/>
-          <include name="searchResultPage_TestCase_002"/>
           <include name="aftertest"/>
         </methods>
       </class> <!-- com.eBay.TestScripts.TestScript -->

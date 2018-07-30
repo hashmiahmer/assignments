@@ -1,0 +1,34 @@
+
+*****************************************************************************
+Jul 31,2018 00:58:22 [info]   Execution Started of Test Class com.eBay.TestScripts.TestScript and Test method homePage_TestCase_001
+*****************************************************************************
+Jul 31,2018 00:58:22 [info]  Screen orientation: PORTRAIT
+Jul 31,2018 00:59:45 [info]  Successfully land on application home page..
+Jul 31,2018 00:59:48 [info]  Clicked on search field.
+Jul 31,2018 01:00:01 [info]  ultra thin men / women / kids led digital fashion sports watch bracelet (n-1049) search keyword entered
+Jul 31,2018 01:00:03 [info]  Clicked on search item from auto-suggestion drop list.
+
+*****************************************************************************
+Jul 31,2018 01:00:03 [info]   Execution Started of Test Class com.eBay.TestScripts.TestScript and Test method searchResultPage_TestCase_002
+*****************************************************************************
+Jul 31,2018 01:00:07 [info]  Pop-up is appeared.
+Jul 31,2018 01:00:08 [info]  Pop-up got handled.
+Jul 31,2018 01:00:10 [info]  Successfully landed on search result page.
+Jul 31,2018 01:00:12 [info]  Clicked on Sort By button
+Jul 31,2018 01:00:15 [info]  Lowest Price + Shipping subfilter option.
+Jul 31,2018 01:00:17 [info]  Pop-up is appeared.
+Jul 31,2018 01:00:19 [info]  Pop-up got handled.
+Jul 31,2018 01:00:20 [info]  ?99.00 item got clicked
+
+*****************************************************************************
+Jul 31,2018 01:00:20 [info]   Execution Started of Test Class com.eBay.TestScripts.TestScript and Test method productDetailsPage_TestCase_003
+*****************************************************************************
+Jul 31,2018 01:00:24 [info]  Successfully landed on PDP
+Jul 31,2018 01:00:25 [info]  Product image got swiped..
+Jul 31,2018 01:00:28 [info]  Clicked on color drop down field
+Jul 31,2018 01:00:30 [info]  Clicked on Black color.
+Jul 31,2018 01:00:33 [info]  Clicked on BuyIt Now button
+
+*****************************************************************************
+Jul 31,2018 01:00:33 [info]   Execution Started of Test Class com.eBay.TestScripts.TestScript and Test method signInPage_TestCase_004
+*****************************************************************************

@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-eBayTest">
-              <span class="suite-name border-passed">eBayTest</span>
+              <span class="suite-name border-failed">eBayTest</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,7 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods,   4 passed</span>
+                    <span class="method-stats">4 methods, 1 failed,   3 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-eBayTest" class="hide-methods failed suite-eBayTest"> (hide)</a> <!-- hide-methods failed suite-eBayTest -->
+                      <a href="#" panel-name="suite-eBayTest" class="show-methods failed suite-eBayTest"> (show)</a> <!-- show-methods failed suite-eBayTest -->
+                    </span>
+                    <div class="method-list-content failed suite-eBayTest">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-eBayTest" title="com.eBay.TestScripts.TestScript" hash-for-method="signInPage_TestCase_004">signInPage_TestCase_004</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-eBayTest -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -115,11 +129,6 @@
                         <a href="#" class="method navigator-link" panel-name="suite-eBayTest" title="com.eBay.TestScripts.TestScript" hash-for-method="searchResultPage_TestCase_002">searchResultPage_TestCase_002</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-eBayTest" title="com.eBay.TestScripts.TestScript" hash-for-method="signInPage_TestCase_004">signInPage_TestCase_004</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                     </div> <!-- method-list-content passed suite-eBayTest -->
                   </li>
                 </ul>
@@ -132,6 +141,44 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-eBayTest" class="panel eBayTest">
+          <div class="suite-eBayTest-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.eBay.TestScripts.TestScript</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="signInPage_TestCase_004">
+                  </a> <!-- signInPage_TestCase_004 -->
+                  <span class="method-name">signInPage_TestCase_004</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: &apos;3.6.0&apos;, revision: &apos;6fbf3ec767&apos;, time: &apos;2017-09-27T15:28:36.4Z&apos;
+System info: host: &apos;LAPTOP-CU870VSL&apos;, ip: &apos;192.168.31.190&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_151&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{app=C:\Users\Ahmer\Centralize\Appium\eBay\eBay_Automation_Framework\app\Android\eBay.apk, appPackage=com.ebay.mobile, deviceScreenSize=1080x1920, networkConnectionEnabled=true, noReset=false, warnings={}, appWaitActivity=SplashActivity, SplashActivity,OtherActivity, *, *.SplashActivity, appWaitPackage=com.ebay.mobile, databaseEnabled=false, adbPort=5038, deviceName=55e9b522, platform=LINUX, deviceUDID=55e9b522, appActivity=com.ebay.mobile.activities.MainActivity, desired={app=C:\Users\Ahmer\Centralize\Appium\eBay\eBay_Automation_Framework\app\Android\eBay.apk, noReset=false, platformVersion=6.0.1, appWaitActivity=SplashActivity, SplashActivity,OtherActivity, *, *.SplashActivity, udid=55e9b522, adbPort=5038, platformName=Android, deviceName=ONE E1003}, platformVersion=6.0.1, webStorageEnabled=false, locationContextEnabled=false, takesScreenshot=true, javascriptEnabled=true, deviceModel=ONE E1003, udid=55e9b522, deviceManufacturer=OnePlus, platformName=LINUX}]
+Session ID: 130170da-8e24-4852-aaa1-adba25a74a34
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:89)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+	at io.appium.java_client.AppiumDriver.rotate(AppiumDriver.java:239)
+	at com.eBay.PageHelper.eBayPageHelper.orientationTest(eBayPageHelper.java:327)
+	at com.eBay.TestScripts.TestScript.signInPage_TestCase_004(TestScript.java:91)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-eBayTest-class-failed -->
           <div class="suite-eBayTest-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -157,13 +204,6 @@
                   <a name="searchResultPage_TestCase_002">
                   </a> <!-- searchResultPage_TestCase_002 -->
                   <span class="method-name">searchResultPage_TestCase_002</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="signInPage_TestCase_004">
-                  </a> <!-- signInPage_TestCase_004 -->
-                  <span class="method-name">signInPage_TestCase_004</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -235,19 +275,19 @@ data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'homePage_TestCase_001')
 data.setCell(0, 2, 'com.eBay.TestScripts.TestScript')
-data.setCell(0, 3, 101549);
+data.setCell(0, 3, 101024);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'searchResultPage_TestCase_002')
 data.setCell(1, 2, 'com.eBay.TestScripts.TestScript')
-data.setCell(1, 3, 62865);
+data.setCell(1, 3, 17095);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'productDetailsPage_TestCase_003')
 data.setCell(2, 2, 'com.eBay.TestScripts.TestScript')
-data.setCell(2, 3, 9339);
+data.setCell(2, 3, 12677);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'signInPage_TestCase_004')
 data.setCell(3, 2, 'com.eBay.TestScripts.TestScript')
-data.setCell(3, 3, 3612);
+data.setCell(3, 3, 2875);
 window.suiteTableData['eBayTest']= { tableData: data, tableDiv: 'times-div-eBayTest'}
 return data;
 }
@@ -264,22 +304,50 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="reporter-method-div">
-              <span class="reporter-method-name">searchResultPage_TestCase_002</span>
+              <span class="reporter-method-name">homePage_TestCase_001</span>
               <div class="reporter-method-output-div">
-                <span class="reporter-method-output">Pop-up is appeared.</span>
-                <span class="reporter-method-output"><img src="file://C:\Users\Ahmer\Centralize\Appium\eBay\eBay_Automation_Framework\attachedScreenshot\popup29-46-18-03-46-24.png" alt="" width='300' height='500'/></span>
+                <span class="reporter-method-output">com.eBay.TestScripts.TestScript and Test method homePage_TestCase_001</span>
+                <span class="reporter-method-output">Screen orientation: PORTRAIT</span>
+                <span class="reporter-method-output"><img src="file://C:\Users\Ahmer\Centralize\Appium\eBay\eBay_Automation_Framework\attachedScreenshot\screenOrintation31-58-18-12-58-22.png" alt="" width='300' height='500'/></span>
+                <span class="reporter-method-output">Successfully land on application home page..</span>
+                <span class="reporter-method-output"><img src="file://C:\Users\Ahmer\Centralize\Appium\eBay\eBay_Automation_Framework\attachedScreenshot\homePage31-59-18-12-59-45.png" alt="" width='300' height='500'/></span>
+                <span class="reporter-method-output">ultra thin men / women / kids led digital fashion sports watch bracelet (n-1049) search keyword entered</span>
+                <span class="reporter-method-output"><img src="file://C:\Users\Ahmer\Centralize\Appium\eBay\eBay_Automation_Framework\attachedScreenshot\keyWordEntered31-00-18-01-00-01.png" alt="" width='300' height='500'/></span>
+                <span class="reporter-method-output">Clicked on search item from auto-suggestion drop list.</span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
             <div class="reporter-method-div">
-              <span class="reporter-method-name">homePage_TestCase_001</span>
+              <span class="reporter-method-name">searchResultPage_TestCase_002</span>
               <div class="reporter-method-output-div">
-                <span class="reporter-method-output">Screen orientation: PORTRAIT</span>
-                <span class="reporter-method-output">Successfully land on application home page..</span>
-                <span class="reporter-method-output"><img src="file://C:\Users\Ahmer\Centralize\Appium\eBay\eBay_Automation_Framework\attachedScreenshot\homePage29-46-18-03-46-00.png" alt="" width='300' height='500'/></span>
-                <span class="reporter-method-output">ultra thin men / women / kids led digital fashion sports watch bracelet (n-1049) search keyword entered</span>
-                <span class="reporter-method-output"><img src="file://C:\Users\Ahmer\Centralize\Appium\eBay\eBay_Automation_Framework\attachedScreenshot\searchField29-46-18-03-46-17.png" alt="" width='300' height='500'/></span>
-                <span class="reporter-method-output">Clicked on search item from auto-suggestion drop list.</span>
-                <span class="reporter-method-output"><img src="file://C:\Users\Ahmer\Centralize\Appium\eBay\eBay_Automation_Framework\attachedScreenshot\autoSuggestion29-46-18-03-46-20.png" alt="" width='300' height='500'/></span>
+                <span class="reporter-method-output">com.eBay.TestScripts.TestScript and Test method searchResultPage_TestCase_002</span>
+                <span class="reporter-method-output">Pop-up is appeared.</span>
+                <span class="reporter-method-output"><img src="file://C:\Users\Ahmer\Centralize\Appium\eBay\eBay_Automation_Framework\attachedScreenshot\popupAppeared31-00-18-01-00-07.png" alt="" width='300' height='500'/></span>
+                <span class="reporter-method-output">Successfully landed on search result page.</span>
+                <span class="reporter-method-output"><img src="file://C:\Users\Ahmer\Centralize\Appium\eBay\eBay_Automation_Framework\attachedScreenshot\searchResultPage31-00-18-01-00-10.png" alt="" width='300' height='500'/></span>
+                <span class="reporter-method-output">Clicked on Sort By button</span>
+                <span class="reporter-method-output"><img src="file://C:\Users\Ahmer\Centralize\Appium\eBay\eBay_Automation_Framework\attachedScreenshot\sortBy31-00-18-01-00-12.png" alt="" width='300' height='500'/></span>
+                <span class="reporter-method-output">Pop-up is appeared.</span>
+                <span class="reporter-method-output"><img src="file://C:\Users\Ahmer\Centralize\Appium\eBay\eBay_Automation_Framework\attachedScreenshot\popupAppeared_afterSort31-00-18-01-00-17.png" alt="" width='300' height='500'/></span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">productDetailsPage_TestCase_003</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">com.eBay.TestScripts.TestScript and Test method productDetailsPage_TestCase_003</span>
+                <span class="reporter-method-output">Successfully landed on PDP</span>
+                <span class="reporter-method-output">Product image got swiped..</span>
+                <span class="reporter-method-output"><img src="file://C:\Users\Ahmer\Centralize\Appium\eBay\eBay_Automation_Framework\attachedScreenshot\imageSwiped31-00-18-01-00-25.png" alt="" width='300' height='500'/></span>
+                <span class="reporter-method-output">Clicked on color drop down field</span>
+                <span class="reporter-method-output"><img src="file://C:\Users\Ahmer\Centralize\Appium\eBay\eBay_Automation_Framework\attachedScreenshot\colorDropDownField31-00-18-01-00-28.png" alt="" width='300' height='500'/></span>
+                <span class="reporter-method-output">Clicked on Black color.</span>
+                <span class="reporter-method-output"><img src="file://C:\Users\Ahmer\Centralize\Appium\eBay\eBay_Automation_Framework\attachedScreenshot\selectColor31-00-18-01-00-30.png" alt="" width='300' height='500'/></span>
+                <span class="reporter-method-output">Clicked on BuyIt Now button</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">signInPage_TestCase_004</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">com.eBay.TestScripts.TestScript and Test method signInPage_TestCase_004</span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -304,39 +372,39 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">homePage_TestCase_001</span>
-                <span class="method-start">48698 ms</span>
+                <span class="method-start">52520 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=homePage_TestCase_001 status=SUCCESS method=TestScript.homePage_TestCase_001()[pri:...)</span>
-                <span class="method-start">150249 ms</span>
+                <span class="method-start">153558 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">searchResultPage_TestCase_002</span>
-                <span class="method-start">150250 ms</span>
+                <span class="method-start">153559 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=searchResultPage_TestCase_002 status=SUCCESS method=TestScript.searchResultPage_Tes...)</span>
-                <span class="method-start">213120 ms</span>
+                <span class="method-start">170658 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">productDetailsPage_TestCase_003</span>
-                <span class="method-start">213122 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">signInPage_TestCase_004</span>
-                <span class="method-start">222462 ms</span>
+                <span class="method-start">170661 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=productDetailsPage_TestCase_003 status=SUCCESS method=TestScript.productDetailsPage...)</span>
-                <span class="method-start">222462 ms</span>
+                <span class="method-start">183341 ms</span>
               </div> <!-- configuration-method after -->
-              <div class="configuration-class after">
-                <span class="method-name">aftertest</span>
-                <span class="method-start">226076 ms</span>
-              </div> <!-- configuration-class after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">signInPage_TestCase_004</span>
+                <span class="method-start">183343 ms</span>
+              </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=signInPage_TestCase_004 status=SUCCESS method=TestScript.signInPage_TestCase_004()[...)</span>
-                <span class="method-start">226076 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">tearDown([TestResult name=signInPage_TestCase_004 status=FAILURE method=TestScript.signInPage_TestCase_004()[...)</span>
+                <span class="method-start">186223 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
